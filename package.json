@@ -11,11 +11,13 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "element-plus": "^2.8.3",
+    "vant": "^4.9.6",
     "vue": "^3.4.37"
   },
   "devDependencies": {
     "@iconify-json/ep": "^1.1.16",
     "@types/node": "^22.5.5",
+    "@vant/auto-import-resolver": "^1.2.1",
     "@vitejs/plugin-vue": "^5.1.2",
     "typescript": "^5.5.3",
     "unplugin-auto-import": "^0.18.3",

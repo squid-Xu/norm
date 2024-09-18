@@ -11,6 +11,8 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 
+import { VantResolver } from '@vant/auto-import-resolver';
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
@@ -22,6 +24,8 @@ export default defineConfig({
 			resolvers: [
 				// 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
 				ElementPlusResolver(),
+				// 自动导入vant
+				VantResolver(),
 			],
 		}),
 		Components({
@@ -35,6 +39,8 @@ export default defineConfig({
 					// 指定collection，即指定为elementplus图标集ep
 					enabledCollections: ['ep'],
 				}),
+				// 自动注册vant
+				VantResolver(),
 			],
 		}),
 		// Icons图标自动下载
