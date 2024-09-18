@@ -15,10 +15,18 @@ import { VantResolver } from '@vant/auto-import-resolver';
 
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
+// vite加入编译eslint错误提示
+import eslintPlugin from 'vite-plugin-eslint';
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
         vue(),
+        // 配置vite在运行的时候自动检测eslint规范
+        eslintPlugin({
+            cache: false, // 不缓存结果，每次都检查
+            include: ['src/**/*.ts', 'src/**/*.js', 'src/**/*.vue', 'src/*.ts', 'src/*.js', 'src/*.vue']
+        }),
         AutoImport({
             // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
             imports: ['vue'],
