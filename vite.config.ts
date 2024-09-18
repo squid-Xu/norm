@@ -13,6 +13,8 @@ import IconsResolver from 'unplugin-icons/resolver';
 
 import { VantResolver } from '@vant/auto-import-resolver';
 
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
@@ -46,6 +48,13 @@ export default defineConfig({
 		// Icons图标自动下载
 		Icons({
 			autoInstall: true,
+		}),
+		//用于生成 svg 雪碧图.
+		createSvgIconsPlugin({
+			// 指定需要缓存的图标文件夹
+			iconDirs: [path.resolve(__dirname, 'src/assets/icons')],
+			// 指定symbolId格式
+			symbolId: 'icon-[dir]-[name]',
 		}),
 	],
 	//路径别名
