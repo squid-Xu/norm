@@ -3,19 +3,19 @@
 const props = defineProps({
     prefix: {
         type: String,
-        default: "icon",
+        default: 'icon'
     },
     iconClass: {
         type: String,
-        required: false,
+        required: false
     },
     color: {
-        type: String,
+        type: String
     },
     size: {
         type: String,
-        default: "1em",
-    },
+        default: '1em'
+    }
 });
 
 const symbolId = computed(() => `#${props.prefix}-${props.iconClass}`);
